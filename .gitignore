@@ -1,0 +1,23 @@
+.DS_Store
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.jupyter/
+.coverage
+htmlcov/
+*.log
+
+# Le corpus tiers reste téléchargeable depuis sa source, mais n'est pas redistribué.
+data/raw/*.csv
+data/processed/*.csv
+!data/processed/ml_split_ids.csv
+
+# Squelettes non exécutés, hors périmètre de la soumission finale.
+notebooks/03_ml_comparison.ipynb
+notebooks/06_robustness.ipynb

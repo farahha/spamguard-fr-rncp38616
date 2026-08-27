@@ -1,0 +1,109 @@
+{
+  "generated_at_utc": "2026-08-24T12:30:15.722702+00:00",
+  "number_of_messages": 5572,
+  "number_of_columns": 4,
+  "columns": [
+    "id",
+    "label",
+    "text_fr",
+    "text_en"
+  ],
+  "unique_labels": [
+    "ham",
+    "spam"
+  ],
+  "label_distribution": {
+    "ham": {
+      "count": 4825,
+      "percentage": 86.59
+    },
+    "spam": {
+      "count": 747,
+      "percentage": 13.41
+    }
+  },
+  "imbalance_ratio_majority_to_minority": 6.459,
+  "missing_values": {
+    "id": 0,
+    "label": 0,
+    "text_fr": 0,
+    "text_en": 0
+  },
+  "duplicates": {
+    "exact_duplicate_rows_excluding_id": 415,
+    "french_duplicate_groups": 295,
+    "french_duplicate_excess_rows": 438,
+    "english_duplicate_groups": 289,
+    "english_duplicate_excess_rows": 415,
+    "french_texts_with_conflicting_labels": 0,
+    "english_texts_with_conflicting_labels": 0
+  },
+  "length_statistics": {
+    "ham": {
+      "n_chars": {
+        "count": 4825.0,
+        "mean": 77.78072538860104,
+        "min": 2.0,
+        "25%": 35.0,
+        "50%": 55.0,
+        "75%": 100.0,
+        "max": 986.0
+      },
+      "n_words": {
+        "count": 4825.0,
+        "mean": 13.977616580310881,
+        "min": 1.0,
+        "25%": 6.0,
+        "50%": 10.0,
+        "75%": 18.0,
+        "max": 184.0
+      }
+    },
+    "spam": {
+      "n_chars": {
+        "count": 747.0,
+        "mean": 157.7376171352075,
+        "min": 8.0,
+        "25%": 145.0,
+        "50%": 167.0,
+        "75%": 181.0,
+        "max": 262.0
+      },
+      "n_words": {
+        "count": 747.0,
+        "mean": 25.032128514056225,
+        "min": 1.0,
+        "25%": 22.0,
+        "50%": 26.0,
+        "75%": 29.0,
+        "max": 41.0
+      }
+    }
+  },
+  "exploratory_indicators": {
+    "ham": {
+      "url_percentage": 0.35,
+      "number_percentage": 13.99,
+      "mean_special_characters": 4.9,
+      "mean_uppercase_ratio": 0.0516
+    },
+    "spam": {
+      "url_percentage": 16.33,
+      "number_percentage": 94.38,
+      "mean_special_characters": 6.71,
+      "mean_uppercase_ratio": 0.1458
+    }
+  },
+  "problems_detected": {
+    "messages_with_british_currency_marker": 288,
+    "messages_with_anglophone_reference_marker": 363,
+    "note": "Ces comptages sont des signaux observables, pas une mesure automatique de la qualité linguistique. L'échantillon bilingue doit être examiné humainement."
+  },
+  "limits": [
+    "Les textes français sont des traductions automatiques du corpus anglais, pas des SMS natifs collectés en France.",
+    "Les formulations, monnaies, numéros et références culturelles du corpus source peuvent subsister.",
+    "L'échantillon bilingue permet une inspection qualitative, pas une mesure de qualité linguistique.",
+    "Aucun split train/test n'est réalisé : il devra précéder toute opération apprenant à partir des données.",
+    "Les licences annoncées par Hugging Face (GPL) et UCI (CC BY 4.0) sont documentées séparément."
+  ]
+}

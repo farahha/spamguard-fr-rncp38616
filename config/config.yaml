@@ -1,0 +1,31 @@
+project:
+  name: SpamGuard-FR
+  random_seed: 42
+
+paths:
+  raw_data: data/raw/sms_multilingual.csv
+  processed_data: data/processed/sms_fr.csv
+  deduplicated_data: data/processed/sms_fr_deduplicated.csv
+  split_ids: data/processed/ml_split_ids.csv
+  figures: outputs/figures
+  reports: outputs/reports
+  metrics: outputs/metrics
+  ml_model: models/ml_spam_classifier.joblib
+
+data:
+  source_label_column: labels
+  source_french_column: text_fr
+  source_english_column: text
+  allowed_labels:
+    - ham
+    - spam
+
+ml:
+  test_size: 0.20
+  random_state: 42
+  tfidf:
+    lowercase: true
+    ngram_range: [1, 2]
+    min_df: 2
+    max_df: 0.95
+    sublinear_tf: true
