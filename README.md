@@ -49,6 +49,42 @@ Ces valeurs décrivent cette expérience sur ce corpus traduit ; elles ne sont p
 
 Le modèle final est **Linear SVM** : il obtient le meilleur F1 spam, conserve un bon recall spam, limite les faux positifs à 6 et présente un faible coût d'inférence. Le pipeline TF-IDF + LinearSVC sauvegardé se trouve dans [`models/ml_spam_classifier.joblib`](models/ml_spam_classifier.joblib).
 
+## Parcours Machine Learning
+
+### Notebook 01 — Audit des données
+
+- contrôle de la qualité des données ;
+- définition des classes `ham` et `spam` ;
+- observation du déséquilibre des classes ;
+- détection des doublons ;
+- prévention de la fuite de données (*data leakage*).
+
+### Notebook 02 — Baseline
+
+- déduplication ;
+- split train/test stratifié (80 % / 20 %, `random_state=42`) ;
+- vectorisation TF-IDF ;
+- Logistic Regression ;
+- entraînement avec `.fit()` et prédiction avec `.predict()` ;
+- optimisation de la log-loss ;
+- Accuracy, Precision, Recall, F1-score et matrice de confusion.
+
+### Notebook 03 — Comparaison
+
+Comparaison de Logistic Regression, Linear SVM et Random Forest avec le même split et la même représentation TF-IDF. Le modèle retenu est **Linear SVM**.
+
+| Modèle | Accuracy | Precision spam | Recall spam | F1-score spam |
+|---|---:|---:|---:|---:|
+| Logistic Regression | 98,15 % | 90,98 % | 94,53 % | 92,72 % |
+| **Linear SVM** | **98,64 %** | **95,24 %** | 93,75 % | **94,49 %** |
+| Random Forest | 97,76 % | 92,00 % | 89,84 % | 90,91 % |
+
+## Correspondance avec les compétences RNCP
+
+- **C1 — Sélectionner l'algorithme le plus adapté** : Notebook 03, comparaison de Logistic Regression, Linear SVM et Random Forest, puis sélection du Linear SVM.
+- **C2 — Préparer et transformer les données** : Notebooks 01 et 02, audit, déduplication, split train/test et TF-IDF.
+- **C3 — Entraîner un modèle en optimisant une loss function** : Notebook 02, Logistic Regression, `.fit()`, log-loss et ajustement des coefficients.
+
 ## Métriques
 
 - **Accuracy** : part totale des messages correctement classés.
@@ -86,10 +122,11 @@ Télécharger ensuite le CSV tiers en suivant [data/README.md](data/README.md). 
 
 ## Exécuter les notebooks
 
-Les notebooks exécutés et leurs sorties utiles sont conservés :
+Les trois notebooks du parcours ML sont exécutés et conservent leurs sorties utiles :
 
 - [01 — Audit des données](notebooks/01_data_audit.ipynb)
-- [02 — Comparaison Machine Learning](notebooks/02_ml_baseline.ipynb)
+- [02 — Baseline Logistic Regression](notebooks/02_ml_baseline.ipynb)
+- [03 — Comparaison Machine Learning](notebooks/03_ml_comparison.ipynb)
 
 Après préparation des données, lancer Jupyter avec :
 

@@ -17,7 +17,3 @@ htmlcov/
 data/raw/*.csv
 data/processed/*.csv
 !data/processed/ml_split_ids.csv
-
-# Squelettes non exécutés, hors périmètre de la soumission finale.
-notebooks/03_ml_comparison.ipynb
-notebooks/06_robustness.ipynb

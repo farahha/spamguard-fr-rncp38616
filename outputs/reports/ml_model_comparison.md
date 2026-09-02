@@ -18,9 +18,9 @@ L'audit initial trouvait 415 doublons du triplet complet. La règle expérimenta
 
 | model               |   accuracy |   precision_spam |   recall_spam |   f1_spam |   f1_macro |   false_positives |   false_negatives |   training_time_seconds |   inference_time_ms_mean |
 |:--------------------|-----------:|-----------------:|--------------:|----------:|-----------:|------------------:|------------------:|------------------------:|-------------------------:|
-| Logistic Regression |   0.981500 |         0.909774 |      0.945312 |  0.927203 |   0.958303 |                12 |                 7 |                0.061328 |                 0.007429 |
-| Linear SVM          |   0.986368 |         0.952381 |      0.937500 |  0.944882 |   0.968552 |                 6 |                 8 |                0.051185 |                 0.007426 |
-| Random Forest       |   0.977605 |         0.920000 |      0.898438 |  0.909091 |   0.948160 |                10 |                13 |                0.339655 |                 0.035446 |
+| Logistic Regression |   0.981500 |         0.909774 |      0.945312 |  0.927203 |   0.958303 |                12 |                 7 |                0.059992 |                 0.007966 |
+| Linear SVM          |   0.986368 |         0.952381 |      0.937500 |  0.944882 |   0.968552 |                 6 |                 8 |                0.057690 |                 0.007525 |
+| Random Forest       |   0.977605 |         0.920000 |      0.898438 |  0.909091 |   0.948160 |                10 |                13 |                0.386160 |                 0.032890 |
 
 TP/TN/FP/FN utilisent `spam` comme classe positive. Un faux positif est un SMS légitime écarté ; un faux négatif est un spam qui atteint l'utilisateur.
 

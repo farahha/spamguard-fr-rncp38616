@@ -249,13 +249,11 @@ Trois pipelines TF-IDF ont été évalués sur le même test historique : Logist
 - **Linear SVM** : particulièrement adapté aux vecteurs sparse de grande dimension et souvent efficace en classification de texte ; scores non probabilistes et interprétation moins immédiate qu'une régression logistique.
 - **Random Forest** : représente la famille des ensembles d'arbres étudiée dans la formation, capture des interactions non linéaires et fournit des importances ; il est plus coûteux, moins compact et n'est pas naturellement optimal pour un TF-IDF sparse de grande dimension.
 
-Note historique : une première exploration incluait Multinomial Naive Bayes. Elle a été retirée de la comparaison finale parce que cet algorithme ne fait pas partie du programme pédagogique suivi.
-
 ## Décision
 
 Le pipeline retenu est **{selected_name}**. Sur cette exécution, il obtient un F1 spam de **{row['f1_spam']:.4f}**, une precision spam de **{row['precision_spam']:.4f}**, un recall spam de **{row['recall_spam']:.4f}**, avec **{int(row['false_positives'])} faux positifs** et **{int(row['false_negatives'])} faux négatifs**.
 
-Son temps d'entraînement mesuré est de **{row['training_time_seconds']:.6f} s** et son inférence moyenne de **{row['inference_time_ms_mean']:.6f} ms par message**. La sélection suit le F1 spam puis vérifie les garde-fous métier et la sobriété opérationnelle.
+Il présente la meilleure accuracy, la meilleure precision spam et le meilleur F1 spam des trois modèles. Logistic Regression obtient un recall spam légèrement supérieur, mais Linear SVM offre le meilleur compromis global et convient particulièrement aux représentations textuelles TF-IDF sparse de grande dimension.
 
 ## Conséquences
 
